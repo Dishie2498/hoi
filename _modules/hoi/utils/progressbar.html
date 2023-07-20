@@ -385,7 +385,7 @@ document.write(`
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;hoi&#39;</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="get_pbar"><a class="viewcode-back" href="../../../api/hoi.utils.html#hoi.utils.progressbar.get_pbar">[docs]</a><span class="k">def</span> <span class="nf">get_pbar</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="get_pbar"><a class="viewcode-back" href="../../../api/generated/hoi.utils.pre.html#hoi.utils.progressbar.get_pbar">[docs]</a><span class="k">def</span> <span class="nf">get_pbar</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Get progress bar&quot;&quot;&quot;</span>
     <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;disable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">logger</span><span class="o">.</span><span class="n">getEffectiveLevel</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">20</span>
     <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;mininterval&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.016</span>
@@ -397,7 +397,7 @@ document.write(`
     <span class="k">return</span> <span class="n">tqdm</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="scan_tqdm"><a class="viewcode-back" href="../../../api/hoi.utils.html#hoi.utils.progressbar.scan_tqdm">[docs]</a><span class="k">def</span> <span class="nf">scan_tqdm</span><span class="p">(</span>
+<div class="viewcode-block" id="scan_tqdm"><a class="viewcode-back" href="../../../api/generated/hoi.utils.pre.html#hoi.utils.progressbar.scan_tqdm">[docs]</a><span class="k">def</span> <span class="nf">scan_tqdm</span><span class="p">(</span>
     <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
     <span class="n">print_rate</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">message</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -444,7 +444,7 @@ document.write(`
     <span class="k">return</span> <span class="n">_scan_tqdm</span></div>
 
 
-<div class="viewcode-block" id="loop_tqdm"><a class="viewcode-back" href="../../../api/hoi.utils.html#hoi.utils.progressbar.loop_tqdm">[docs]</a><span class="k">def</span> <span class="nf">loop_tqdm</span><span class="p">(</span>
+<div class="viewcode-block" id="loop_tqdm"><a class="viewcode-back" href="../../../api/generated/hoi.utils.pre.html#hoi.utils.progressbar.loop_tqdm">[docs]</a><span class="k">def</span> <span class="nf">loop_tqdm</span><span class="p">(</span>
     <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
     <span class="n">print_rate</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">message</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -486,7 +486,7 @@ document.write(`
     <span class="k">return</span> <span class="n">_loop_tqdm</span></div>
 
 
-<div class="viewcode-block" id="build_tqdm"><a class="viewcode-back" href="../../../api/hoi.utils.html#hoi.utils.progressbar.build_tqdm">[docs]</a><span class="k">def</span> <span class="nf">build_tqdm</span><span class="p">(</span>
+<div class="viewcode-block" id="build_tqdm"><a class="viewcode-back" href="../../../api/generated/hoi.utils.pre.html#hoi.utils.progressbar.build_tqdm">[docs]</a><span class="k">def</span> <span class="nf">build_tqdm</span><span class="p">(</span>
     <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">print_rate</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">message</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Tuple</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Callable</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Callable</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
