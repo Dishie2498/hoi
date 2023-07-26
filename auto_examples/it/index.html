@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Entropy example 1 &#8212; HOI 0.0.1 documentation</title>
+    <title>Entropy and mutual information &#8212; HOI 0.0.1 documentation</title>
   
   
   
@@ -49,11 +49,11 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/entropy/entropy1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/it/index';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Metrics of HOI" href="../metrics/index.html" />
-    <link rel="prev" title="Entropy example 2" href="entropy2.html" />
+    <link rel="next" title="Entropy example 2" href="it2.html" />
+    <link rel="prev" title="Tutorial example 1" href="../tutorials/tut1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -372,9 +372,9 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/tut1.html">Tutorial example 1</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Entropy and mutual information</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="entropy2.html">Entropy example 2</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Entropy example 1</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Entropy and mutual information</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="it2.html">Entropy example 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="it1.html">Entropy example 1</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../metrics/index.html">Metrics of HOI</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -427,10 +427,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Examples</a></li>
     
-    
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Entropy and mutual information</a></li>
-    
-    <li class="breadcrumb-item active" aria-current="page">Entropy example 1</li>
+    <li class="breadcrumb-item active" aria-current="page">Entropy and mutual information</li>
   </ul>
 </nav>
 </div>
@@ -447,24 +444,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="sphx-glr-download-link-note admonition note">
-<p class="admonition-title">Note</p>
-<p><a class="reference internal" href="#sphx-glr-download-auto-examples-entropy-entropy1-py"><span class="std std-ref">Go to the end</span></a>
-to download the full example code</p>
+  <section id="entropy-and-mutual-information">
+<span id="sphx-glr-auto-examples-it"></span><h1>Entropy and mutual information<a class="headerlink" href="#entropy-and-mutual-information" title="Permalink to this headline">#</a></h1>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Entropy example 2"><img alt="" src="../../_images/sphx_glr_it2_thumb.png" />
+<p><a class="reference internal" href="it2.html#sphx-glr-auto-examples-it-it2-py"><span class="std std-ref">Entropy example 2</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Entropy example 2</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Entropy example 1"><img alt="" src="../../_images/sphx_glr_it1_thumb.png" />
+<p><a class="reference internal" href="it1.html#sphx-glr-auto-examples-it-it1-py"><span class="std std-ref">Entropy example 1</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Entropy example 1</div>
+</div></div><div class="toctree-wrapper compound">
 </div>
-<section class="sphx-glr-example-title" id="entropy-example-1">
-<span id="sphx-glr-auto-examples-entropy-entropy1-py"></span><h1>Entropy example 1<a class="headerlink" href="#entropy-example-1" title="Permalink to this headline">#</a></h1>
-<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt neque, perferendis sed id doloribus at error in ea nulla reprehenderit optio rerum nostrum harum voluptas, sequi laudantium numquam accusantium consequuntur minus quisquam autem magnam distinctio. Itaque, fuga quisquam. Dolorum commodi molestiae soluta, dolorem tenetur magni illum distinctio minus vero tempore quibusdam totam sed, sapiente aliquam aperiam sunt accusantium quisquam eos rerum cupiditate fuga debitis inventore. Exercitationem nihil ipsa aliquid, placeat laborum ut vel odio deserunt adipisci minima blanditiis aperiam nisi veniam cum labore deleniti reiciendis earum eligendi dignissimos suscipit beatae ex a! Omnis commodi modi magnam esse molestias odit, non unde eius vel, aspernatur perferendis voluptatibus nam nihil, aut et. Molestias, quos quia soluta minus illum amet cupiditate iure a assumenda debitis sint dolor, dolorem at. Tempora, dolorum maiores! Explicabo molestias nostrum nihil non laboriosam accusantium aut maxime. Tenetur similique natus quos accusamus, dicta iure? Exercitationem id aut laborum itaque consequatur delectus molestias labore sequi. Libero distinctio laboriosam debitis possimus beatae nisi quae autem in voluptatibus labore vero error omnis neque, quisquam culpa odio! Tempore neque ipsa voluptatibus alias laudantium id voluptates reiciendis dolorem iusto cumque tenetur illum aliquid maiores totam sint rem repellat, repellendus molestias deserunt deleniti odit mollitia?</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
-<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-entropy-entropy1-py">
-<div class="sphx-glr-download sphx-glr-download-python docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/524f2c21d10e1107f2b0b1ffb8276925/entropy1.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">entropy1.py</span></code></a></p>
-</div>
-<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/745615f328480b6c416d4bea05ca2a1e/entropy1.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">entropy1.ipynb</span></code></a></p>
-</div>
-</div>
-<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
 
 
@@ -479,20 +468,20 @@ to download the full example code</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="entropy2.html"
+       href="../tutorials/tut1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Entropy example 2</p>
+        <p class="prev-next-title">Tutorial example 1</p>
       </div>
     </a>
     <a class="right-next"
-       href="../metrics/index.html"
+       href="it2.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Metrics of HOI</p>
+        <p class="prev-next-title">Entropy example 2</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -510,7 +499,7 @@ to download the full example code</p>
 
   <div class="sidebar-secondary-item">
   <div class="tocsection sourcelink">
-    <a href="../../_sources/auto_examples/entropy/entropy1.rst.txt">
+    <a href="../../_sources/auto_examples/it/index.rst.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>
