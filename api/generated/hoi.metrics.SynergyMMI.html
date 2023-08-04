@@ -368,7 +368,7 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../api_metrics.html">Metrics of HOI</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="hoi.metrics.OinfoZeroLag.html">hoi.metrics.OinfoZeroLag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoi.metrics.Oinfo.html">hoi.metrics.Oinfo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoi.metrics.GradientOinfo.html">hoi.metrics.GradientOinfo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoi.metrics.InfoTopo.html">hoi.metrics.InfoTopo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hoi.metrics.RSI.html">hoi.metrics.RSI</a></li>
@@ -455,15 +455,19 @@ document.write(`
 <h1>hoi.metrics.SynergyMMI<a class="headerlink" href="#hoi-metrics-synergymmi" title="Permalink to this headline">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="hoi.metrics.SynergyMMI">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hoi.metrics.</span></span><span class="sig-name descname"><span class="pre">SynergyMMI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/hoi/metrics/syn_mmi.html#SynergyMMI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hoi.metrics.SynergyMMI" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hoi.metrics.</span></span><span class="sig-name descname"><span class="pre">SynergyMMI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multiplets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/hoi/metrics/syn_mmi.html#SynergyMMI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hoi.metrics.SynergyMMI" title="Permalink to this definition">#</a></dt>
 <dd><p>Synergy estimated using the Minimum Mutual Information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>data</strong><span class="classifier">array_like</span></dt><dd><p>Standard NumPy arrays of shape (n_samples, n_features) or
+<dt><strong>x</strong><span class="classifier">array_like</span></dt><dd><p>Standard NumPy arrays of shape (n_samples, n_features) or
 (n_samples, n_features, n_variables)</p>
 </dd>
 <dt><strong>y</strong><span class="classifier">array_like</span></dt><dd><p>The feature of shape (n_trials,) for estimating task-related O-info</p>
+</dd>
+<dt><strong>multiplets</strong><span class="classifier">list | None</span></dt><dd><p>List of multiplets to compute. Should be a list of multiplets, for
+example [(0, 1, 2), (2, 7, 8, 9)]. By default, all multiplets are
+going to be computed.</p>
 </dd>
 </dl>
 </dd>
@@ -496,7 +500,7 @@ document.write(`
 <tr class="row-odd"><td><p><a class="reference internal" href="#hoi.metrics.SynergyMMI.fit" title="hoi.metrics.SynergyMMI.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>([minsize, maxsize, method])</p></td>
 <td><p>Synergy Index.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#hoi.metrics.SynergyMMI.get_combinations" title="hoi.metrics.SynergyMMI.get_combinations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_combinations</span></code></a>(msize[, as_iterator, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#hoi.metrics.SynergyMMI.get_combinations" title="hoi.metrics.SynergyMMI.get_combinations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_combinations</span></code></a>(minsize[, maxsize, astype, ...])</p></td>
 <td><p>Get combinations of features.</p></td>
 </tr>
 </tbody>
@@ -517,7 +521,7 @@ document.write(`
 <dt><strong>method</strong><span class="classifier">{‘gcmi’, ‘binning’, ‘knn’, ‘kernel}</span></dt><dd><p>Name of the method to compute entropy. Use either :</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>‘gcmi’: gaussian copula entropy [default]. See 
+<li><p>‘gcmi’: gaussian copula entropy [default]. See
 <a class="reference internal" href="hoi.core.entropy_gcmi.html#hoi.core.entropy_gcmi" title="hoi.core.entropy_gcmi"><code class="xref py py-func docutils literal notranslate"><span class="pre">hoi.core.entropy_gcmi()</span></code></a></p></li>
 <li><p>‘binning’: binning-based estimator of entropy. Note that to
 use this estimator, the data have be to discretized. See
@@ -593,7 +597,7 @@ keep.</p>
 <dt><strong>method</strong><span class="classifier">{‘gcmi’, ‘binning’, ‘knn’, ‘kernel}</span></dt><dd><p>Name of the method to compute entropy. Use either :</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>‘gcmi’: gaussian copula entropy [default]. See 
+<li><p>‘gcmi’: gaussian copula entropy [default]. See
 <a class="reference internal" href="hoi.core.entropy_gcmi.html#hoi.core.entropy_gcmi" title="hoi.core.entropy_gcmi"><code class="xref py py-func docutils literal notranslate"><span class="pre">hoi.core.entropy_gcmi()</span></code></a></p></li>
 <li><p>‘binning’: binning-based estimator of entropy. Note that to
 use this estimator, the data have be to discretized. See
@@ -614,16 +618,17 @@ see <a class="reference internal" href="hoi.core.entropy_kernel.html#hoi.core.en
 
 <dl class="py method">
 <dt class="sig sig-object py" id="hoi.metrics.SynergyMMI.get_combinations">
-<span class="sig-name descname"><span class="pre">get_combinations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_iterator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_jax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hoi.metrics.SynergyMMI.get_combinations" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_combinations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">minsize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">astype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'jax'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hoi.metrics.SynergyMMI.get_combinations" title="Permalink to this definition">#</a></dt>
 <dd><p>Get combinations of features.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>msize</strong><span class="classifier">int</span></dt><dd><p>Size of the multiplets</p>
+<dt><strong>minsize</strong><span class="classifier">int</span></dt><dd><p>Minimum size of the multiplets</p>
 </dd>
-<dt><strong>as_iterator</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, return an iterator. Default is False.</p>
+<dt><strong>maxsize</strong><span class="classifier">int | None</span></dt><dd><p>Maximum size of the multiplets. If None, minsize is used.</p>
 </dd>
-<dt><strong>as_jax</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, return a jax array. Default is True.</p>
+<dt><strong>astype</strong><span class="classifier">{‘jax’, ‘numpy’, ‘iterator’}</span></dt><dd><p>Specify the output type. Use either ‘jax’ get the data as a jax
+array [default], ‘numpy’ for NumPy array or ‘iterator’.</p>
 </dd>
 <dt><strong>order</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, return the order of each multiplet. Default is False.</p>
 </dd>
