@@ -12,7 +12,7 @@ Metrics of HOI
 .. autosummary::
    :toctree: generated/
 
-   Oinfo
+   OinfoZeroLag
    GradientOinfo
    InfoTopo
    RSI
