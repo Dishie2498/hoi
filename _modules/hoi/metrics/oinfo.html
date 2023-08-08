@@ -484,9 +484,7 @@ document.write(`
     <span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;O-Information&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">multiplets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="n">HOIEstimator</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
-            <span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">multiplets</span><span class="o">=</span><span class="n">multiplets</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span>
-        <span class="p">)</span>
+        <span class="n">HOIEstimator</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">multiplets</span><span class="o">=</span><span class="n">multiplets</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Oinfo.fit"><a class="viewcode-back" href="../../../api/generated/hoi.metrics.Oinfo.html#hoi.metrics.Oinfo.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">minsize</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">maxsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;gcmi&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the O-information.</span>
@@ -521,9 +519,7 @@ document.write(`
         <span class="c1"># get entropy function</span>
         <span class="n">entropy</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">vmap</span><span class="p">(</span><span class="n">get_entropy</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
         <span class="n">oinfo_no_ent</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span>
-            <span class="n">_oinfo_no_ent</span><span class="p">,</span>
-            <span class="n">entropy_3d</span><span class="o">=</span><span class="n">entropy</span><span class="p">,</span>
-            <span class="n">entropy_4d</span><span class="o">=</span><span class="n">jax</span><span class="o">.</span><span class="n">vmap</span><span class="p">(</span><span class="n">entropy</span><span class="p">,</span> <span class="n">in_axes</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+            <span class="n">_oinfo_no_ent</span><span class="p">,</span> <span class="n">entropy_3d</span><span class="o">=</span><span class="n">entropy</span><span class="p">,</span> <span class="n">entropy_4d</span><span class="o">=</span><span class="n">jax</span><span class="o">.</span><span class="n">vmap</span><span class="p">(</span><span class="n">entropy</span><span class="p">,</span> <span class="n">in_axes</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
         <span class="p">)</span>
 
         <span class="c1"># prepare output</span>
@@ -537,9 +533,7 @@ document.write(`
         <span class="n">order</span> <span class="o">=</span> <span class="n">order</span><span class="p">[</span><span class="n">keep</span><span class="p">]</span>
 
         <span class="c1"># get progress bar</span>
-        <span class="n">pbar</span> <span class="o">=</span> <span class="n">get_pbar</span><span class="p">(</span>
-            <span class="n">iterable</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="n">order</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">order</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">leave</span><span class="o">=</span><span class="kc">False</span>
-        <span class="p">)</span>
+        <span class="n">pbar</span> <span class="o">=</span> <span class="n">get_pbar</span><span class="p">(</span><span class="n">iterable</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="n">order</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">order</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">leave</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
         <span class="c1"># ______________________________ ENTROPY ____________________________</span>
         <span class="n">offset</span> <span class="o">=</span> <span class="mi">0</span>
@@ -559,7 +553,7 @@ document.write(`
 
             <span class="c1"># fill variables</span>
             <span class="n">n_combs</span><span class="p">,</span> <span class="n">n_feat</span> <span class="o">=</span> <span class="n">_h_idx</span><span class="o">.</span><span class="n">shape</span>
-            <span class="n">hoi</span> <span class="o">=</span> <span class="n">hoi</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">offset</span><span class="p">:</span> <span class="n">offset</span> <span class="o">+</span> <span class="n">n_combs</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">_hoi</span><span class="p">)</span>
+            <span class="n">hoi</span> <span class="o">=</span> <span class="n">hoi</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">offset</span> <span class="p">:</span> <span class="n">offset</span> <span class="o">+</span> <span class="n">n_combs</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">_hoi</span><span class="p">)</span>
 
             <span class="c1"># updates</span>
             <span class="n">offset</span> <span class="o">+=</span> <span class="n">n_combs</span>
